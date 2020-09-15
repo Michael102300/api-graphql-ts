@@ -21,7 +21,6 @@ const dotenv_1 = __importDefault(require("dotenv"));
 const user_1 = require("./resolvers/user");
 const recipe_1 = require("./resolvers/recipe");
 const category_1 = require("./resolvers/category");
-const PORT = 3000;
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
         const app = express_1.default();
@@ -42,6 +41,7 @@ function main() {
             }),
             context: ({ req, res }) => ({ req, res })
         });
+        const PORT = process.env.PORT || 3000;
         apolloServer.applyMiddleware({ app, path: '/graphql' });
         app.listen(PORT, () => {
             console.log(`Server listening on PORT: ${PORT}`);

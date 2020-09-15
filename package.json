@@ -2,12 +2,14 @@
   "name": "recipe-challenge-typescript",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "start": "node dist/server.js",
     "build": "tsc",
     "watch": "tsc -w",
     "dev": "nodemon src/server.ts --exec ts-node"
+
   },
   "keywords": [],
   "author": "",

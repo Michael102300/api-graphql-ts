@@ -81,7 +81,7 @@ let userResolver = class userResolver {
                 if (!isPasswordValid) {
                     throw new Error('Incorrect password');
                 }
-                const secret = 'mysecretkey';
+                const secret = process.env.JWT_SECRET_KEY || 'mysecretkey';
                 const token = jsonwebtoken_1.default.sign({ email: user.email }, secret, { expiresIn: '1d' });
                 return token;
             }

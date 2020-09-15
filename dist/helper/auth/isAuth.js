@@ -21,7 +21,7 @@ exports.isAuth = ({ context }, next) => __awaiter(void 0, void 0, void 0, functi
         const authorization = context.req.headers["authorization"];
         if (authorization) {
             const token = authorization.split(" ")[1];
-            const payload = jsonwebtoken_1.default.verify(token, 'mysecretkey');
+            const payload = jsonwebtoken_1.default.verify(token, process.env.JWT_SECRET_KEY || 'mysecretkey');
             const user = yield user_1.User.findOne({ email: (_a = context.payload) === null || _a === void 0 ? void 0 : _a.email });
             context.payload = payload;
         }

@@ -9,7 +9,7 @@ import { userResolver } from './resolvers/user';
 import { recipeResolver } from './resolvers/recipe';
 import { categoryResolver } from './resolvers/category';
 
-const PORT = 3000;
+
 
 async function main(){
 
@@ -33,9 +33,8 @@ async function main(){
         context: ({ req, res }) => ({ req, res })
         
     });
-
+    const PORT = process.env.PORT || 3000;
     apolloServer.applyMiddleware({ app, path: '/graphql'});
-    
     app.listen(PORT, () => {
         console.log(`Server listening on PORT: ${PORT}`);
         console.log(`Server ready in http://localhost:${PORT}/graphql`);
