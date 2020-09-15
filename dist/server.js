@@ -17,6 +17,7 @@ const express_1 = __importDefault(require("express"));
 const apollo_server_express_1 = require("apollo-server-express");
 const type_graphql_1 = require("type-graphql");
 const typeorm_1 = require("typeorm");
+const dotenv_1 = __importDefault(require("dotenv"));
 const user_1 = require("./resolvers/user");
 const recipe_1 = require("./resolvers/recipe");
 const category_1 = require("./resolvers/category");
@@ -25,6 +26,7 @@ function main() {
     return __awaiter(this, void 0, void 0, function* () {
         const app = express_1.default();
         yield typeorm_1.createConnection();
+        dotenv_1.default.config();
         const apolloServer = new apollo_server_express_1.ApolloServer({
             schema: yield type_graphql_1.buildSchema({
                 resolvers: [
@@ -43,6 +45,7 @@ function main() {
         apolloServer.applyMiddleware({ app, path: '/graphql' });
         app.listen(PORT, () => {
             console.log(`Server listening on PORT: ${PORT}`);
+            console.log(`Server ready in http://localhost:${PORT}/graphql`);
         });
         return app;
     });

@@ -14,19 +14,19 @@ const type_graphql_1 = require("type-graphql");
 let updateRecipeInput = class updateRecipeInput {
 };
 __decorate([
-    type_graphql_1.Field({ nullable: true }),
+    type_graphql_1.Field(() => String, { nullable: true }),
     __metadata("design:type", String)
 ], updateRecipeInput.prototype, "name", void 0);
 __decorate([
-    type_graphql_1.Field({ nullable: true }),
+    type_graphql_1.Field(() => String, { nullable: true }),
     __metadata("design:type", String)
 ], updateRecipeInput.prototype, "description", void 0);
 __decorate([
-    type_graphql_1.Field({ nullable: true }),
+    type_graphql_1.Field(() => String, { nullable: true }),
     __metadata("design:type", String)
 ], updateRecipeInput.prototype, "ingredients", void 0);
 __decorate([
-    type_graphql_1.Field({ nullable: true }),
+    type_graphql_1.Field(() => String, { nullable: true }),
     __metadata("design:type", String)
 ], updateRecipeInput.prototype, "category", void 0);
 updateRecipeInput = __decorate([

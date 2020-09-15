@@ -14,11 +14,11 @@ const type_graphql_1 = require("type-graphql");
 let loginInput = class loginInput {
 };
 __decorate([
-    type_graphql_1.Field(),
+    type_graphql_1.Field(() => String),
     __metadata("design:type", String)
 ], loginInput.prototype, "email", void 0);
 __decorate([
-    type_graphql_1.Field(),
+    type_graphql_1.Field(() => String),
     __metadata("design:type", String)
 ], loginInput.prototype, "password", void 0);
 loginInput = __decorate([

@@ -14,19 +14,19 @@ const type_graphql_1 = require("type-graphql");
 let createRecipeInput = class createRecipeInput {
 };
 __decorate([
-    type_graphql_1.Field(),
+    type_graphql_1.Field(() => String),
     __metadata("design:type", String)
 ], createRecipeInput.prototype, "name", void 0);
 __decorate([
-    type_graphql_1.Field(),
+    type_graphql_1.Field(() => String),
     __metadata("design:type", String)
 ], createRecipeInput.prototype, "description", void 0);
 __decorate([
-    type_graphql_1.Field(),
+    type_graphql_1.Field(() => String),
     __metadata("design:type", String)
 ], createRecipeInput.prototype, "ingredients", void 0);
 __decorate([
-    type_graphql_1.Field(),
+    type_graphql_1.Field(() => String),
     __metadata("design:type", String)
 ], createRecipeInput.prototype, "category", void 0);
 createRecipeInput = __decorate([

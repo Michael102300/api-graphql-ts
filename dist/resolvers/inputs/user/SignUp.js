@@ -14,15 +14,15 @@ const type_graphql_1 = require("type-graphql");
 let signupInput = class signupInput {
 };
 __decorate([
-    type_graphql_1.Field(),
+    type_graphql_1.Field(() => String),
     __metadata("design:type", String)
 ], signupInput.prototype, "name", void 0);
 __decorate([
-    type_graphql_1.Field(),
+    type_graphql_1.Field(() => String),
     __metadata("design:type", String)
 ], signupInput.prototype, "email", void 0);
 __decorate([
-    type_graphql_1.Field(),
+    type_graphql_1.Field(() => String),
     __metadata("design:type", String)
 ], signupInput.prototype, "password", void 0);
 signupInput = __decorate([

@@ -14,7 +14,7 @@ const type_graphql_1 = require("type-graphql");
 let createCategoryInput = class createCategoryInput {
 };
 __decorate([
-    type_graphql_1.Field(),
+    type_graphql_1.Field(() => String),
     __metadata("design:type", String)
 ], createCategoryInput.prototype, "name", void 0);
 createCategoryInput = __decorate([
