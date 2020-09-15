@@ -2,6 +2,6 @@ import { InputType, Field } from "type-graphql";
 
 @InputType()
 export class createCategoryInput{
-    @Field()
+    @Field(() => String)
     name!: string;
 }

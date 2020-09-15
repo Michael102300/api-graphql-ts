@@ -3,12 +3,12 @@ import { InputType, Field, ID } from "type-graphql";
 @InputType()
 export class updateRecipeInput{
 
-    @Field( {nullable: true} )
+    @Field(()=> String, {nullable: true} )
     name?: string;
-    @Field( {nullable: true} )
+    @Field(()=> String, {nullable: true} )
     description?: string;
-    @Field( {nullable: true} )
+    @Field(()=> String, {nullable: true} )
     ingredients?: string;
-    @Field( {nullable: true} )
+    @Field( ()=> String, {nullable: true} )
     category?: string;
 }

@@ -3,12 +3,12 @@ import { InputType, Field } from "type-graphql";
 
 @InputType()
 export class createRecipeInput{
-    @Field()
+    @Field(()=> String)
     name!: string;
-    @Field()
+    @Field(()=> String)
     description!: string;
-    @Field()
+    @Field(()=> String)
     ingredients!: string;
-    @Field()
+    @Field(()=> String)
     category!: string;
 }

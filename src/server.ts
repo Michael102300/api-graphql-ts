@@ -3,6 +3,7 @@ import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
 import { buildSchema } from 'type-graphql';
 import { createConnection,  } from 'typeorm';
+import dotEnv from 'dotenv';
 
 import { userResolver } from './resolvers/user';
 import { recipeResolver } from './resolvers/recipe';
@@ -14,6 +15,7 @@ async function main(){
 
     const app = express();
     await createConnection();
+    dotEnv.config();
     const apolloServer = new ApolloServer({
         schema: await buildSchema({
             resolvers: [
@@ -36,6 +38,7 @@ async function main(){
     
     app.listen(PORT, () => {
         console.log(`Server listening on PORT: ${PORT}`);
+        console.log(`Server ready in http://localhost:${PORT}/graphql`);
     })
     return app;
 }
