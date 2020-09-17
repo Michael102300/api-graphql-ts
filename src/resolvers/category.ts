@@ -10,12 +10,11 @@ import {
 
 import { User } from '../entity/user';
 import { Category } from '../entity/category';
-import { Recipe } from '../entity/recipe';
 import { createCategoryInput } from './inputs/category/createCategory';
 import { updateCategoryInput } from './inputs/category/updateCategory';
 import { isAuth } from '../helper/auth/isAuth';
 import { MyContext } from '../helper/context';
-import { EROFS } from 'constants';
+
 
 @Resolver()
 export class categoryResolver {

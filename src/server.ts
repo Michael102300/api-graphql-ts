@@ -1,9 +1,9 @@
 import 'reflect-metadata';
-import express from 'express';
+import Express from 'express';
 import { ApolloServer } from 'apollo-server-express';
 import { buildSchema } from 'type-graphql';
 import { createConnection,  } from 'typeorm';
-import dotEnv from 'dotenv';
+import * as dotEnv from 'dotenv';
 
 import { userResolver } from './resolvers/user';
 import { recipeResolver } from './resolvers/recipe';
@@ -13,7 +13,7 @@ import { categoryResolver } from './resolvers/category';
 
 async function main(){
 
-    const app = express();
+    const app = Express();
     await createConnection();
     dotEnv.config();
     const apolloServer = new ApolloServer({

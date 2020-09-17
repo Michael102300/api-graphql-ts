@@ -23,12 +23,12 @@ export class Recipe extends BaseEntity{
     @Column()
     ingredients!: string;
 
-    @Field( type => Category)
-    @ManyToOne( type => Category, category => category.name, {eager: true, onDelete: 'CASCADE'} )
+    @Field( () => Category)
+    @ManyToOne( () => Category, category => category.name, {eager: true, onDelete: 'CASCADE'} )
     category! : Category;
 
-    @Field( type => User)
-    @ManyToOne(type=> User, user => user.recipes, {eager: true, onDelete: 'CASCADE'} )
+    @Field( () => User)
+    @ManyToOne( ()=> User, user => user.recipes, {eager: true, onDelete: 'CASCADE'} )
     user!: User;
 
     @CreateDateColumn()

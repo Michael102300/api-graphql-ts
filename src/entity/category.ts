@@ -14,8 +14,8 @@ export class Category extends BaseEntity{
     @Column()
     name!: string;
 
-    @Field( type => Recipe )
-    @OneToMany( type => Recipe, recipe => recipe.category )
+    @Field( () => Recipe )
+    @OneToMany( () => Recipe, recipe => recipe.category )
     recipes!: Recipe[];
 
     @CreateDateColumn()
