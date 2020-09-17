@@ -116,12 +116,17 @@ export class recipeResolver {
                 };
                 const recipe = await Recipe.findOne({ id: id})
                 if(recipe!.user.id !== user.id){
-                    throw new Error('Not authorized')
+                    throw new Error('Not authorized');
+                }
+                const category = await Category.findOne({ name: input.category})
+                if(!category){
+                    throw new Error('Category not exists');
                 }
                 const result = await Recipe.update({id},{
                     name: input.name,
                     description: input.description,
-                    ingredients: input.ingredients
+                    ingredients: input.ingredients,
+                    category: category
                 });
                 return result;
             } catch (error) {
