@@ -11,8 +11,7 @@ import { categoryResolver } from './resolvers/category';
 
 
 
-async function main(){
-
+(async() =>{ 
     const app = Express();
     await createConnection();
     dotEnv.config();
@@ -40,5 +39,4 @@ async function main(){
         console.log(`Server ready in http://localhost:${PORT}/graphql`);
     })
     return app;
-}
-main();
+})();
