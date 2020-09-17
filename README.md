@@ -1,13 +1,13 @@
-#GRAPHQL-API
+# GRAPHQL-API
 This api is developed with ts, type-graphql, typeorm, mysql, it is an api that is in charge of entering and registering users and obtaining an authentication with jsonwebtoken to be able to make queries and records
-####Queries
+#### Queries
 - get recipes
 - getOneRecipe
 - getMyRecipe
 - getCategory
 - getCategories
 
-####Mutations
+#### Mutations
 - login
 - signup
 - createRecipe
@@ -20,7 +20,7 @@ This api is developed with ts, type-graphql, typeorm, mysql, it is an api that i
 
 In the project directory, you can run:
 
- **npm install **
+ **npm install**
 
  First to dowload all dependencies, after you config the typeorm in file ormconfig.json in this file configure your database, with your configuration, homewever you have to create a database first  before executing the following command.
 
