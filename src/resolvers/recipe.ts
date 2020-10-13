@@ -25,10 +25,10 @@ export class recipeResolver {
     @UseMiddleware(isAuth)
     async getRecipes( @Ctx() { payload}: MyContext ){
         try {
-            const user = await User.findOne({ email: payload?.email});
+            /* const user = await User.findOne({ email: payload?.email});
             if(!user){
                 throw new Error('Access denied');
-            };
+            }; */
             const recipes = await Recipe.find();
             return recipes;
         } catch (error) {
@@ -45,10 +45,10 @@ export class recipeResolver {
             name: string
             ){
         try {
-            const user = await User.findOne({ email: payload?.email })
+            /*  const user = await User.findOne({ email: payload?.email })
             if(!user){
                 throw new Error('Access denied');
-            };
+            }; */
             const recipe = await Recipe.findOne({ name })
             return recipe;
         } catch (error) {
@@ -57,7 +57,7 @@ export class recipeResolver {
         }
     }
     
-    @Query(()=> [Recipe!], {nullable: true})
+    @Query(()=> [Recipe], {nullable: true})
     @UseMiddleware(isAuth)
     async getMyRecipes(
             @Ctx() { payload }: MyContext,
